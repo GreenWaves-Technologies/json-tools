@@ -2,14 +2,14 @@ cmake_minimum_required(VERSION 3.5)
 project(json-tools VERSION 1.0.0)
 set (CMAKE_CXX_STANDARD 11)
 
-add_library(libjson STATIC
+add_library(json STATIC
     src/jsmn.cpp
     src/json.cpp
 )
-target_include_directories(libjson PRIVATE 
+target_include_directories(json PRIVATE 
     ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-set_target_properties(libjson PROPERTIES VERSION ${PROJECT_VERSION})
+set_target_properties(json PROPERTIES VERSION ${PROJECT_VERSION})
 
 set(JSON_TOOLS_PYTHON_DIR ${CMAKE_CURRENT_SOURCE_DIR}/python/)
 set(JSON_TOOLS_PY_FILES 
@@ -23,4 +23,4 @@ set(JSON_TOOLS_INCLUDE_FILES
 
 install(PROGRAMS ${JSON_TOOLS_PY_FILES} DESTINATION python)
 install(FILES ${JSON_TOOLS_INCLUDE_FILES} DESTINATION include)
-install(TARGETS libjson DESTINATION lib)
+install(TARGETS json DESTINATION lib)
