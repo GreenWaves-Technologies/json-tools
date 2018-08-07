@@ -9,9 +9,9 @@ add_library(json STATIC
 target_include_directories(json PRIVATE 
     ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-set_target_properties(bar_hidden PROPERTIES
+set_target_properties(json PROPERTIES
 	VERSION ${PROJECT_VERSION}
-	POSITION_INDEPENDENT_CODE ON	# Compile this object code position independent.
+	POSITION_INDEPENDENT_CODE ON
 )
 
 set(JSON_TOOLS_PYTHON_DIR ${CMAKE_CURRENT_SOURCE_DIR}/python/)
